@@ -292,7 +292,9 @@ size_t Serial_::write(const uint8_t *buffer, size_t size)
 	// TODO - ZE - check behavior on different OSes and test what happens if an
 	// open connection isn't broken cleanly (cable is yanked out, host dies
 	// or locks up, or host virtual serial port hangs)
-	if (_usbLineInfo.lineState > 0)
+	
+	// Checking for CDC_LINESTATE_READY instead of >0 to prevent freeze after disconnect from native port 
+	if (_usbLineInfo.lineState == CDC_LINESTATE_READY)
 	{
 		int r = USBD_Send(CDC_TX, buffer, size);
 
@@ -328,7 +330,7 @@ Serial_::operator bool()
 
 	bool result = false;
 
-	if (_usbLineInfo.lineState > 0)
+	if (_usbLineInfo.lineState == CDC_LINESTATE_READY)
 	{
 		result = true;
 	}
