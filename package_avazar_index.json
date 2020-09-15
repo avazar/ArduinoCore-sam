@@ -31,6 +31,33 @@
 							"version": "1.6.1-arduino"
 						}
 					]
+				},
+				{
+					"name": "Arduino SAM Boards (32-bits ARM Cortex-M3)",
+					"architecture": "sam",
+					"version": "1.6.12-2",
+					"category": "Arduino",
+					"url": "https://github.com/avazar/ArduinoCore-sam/releases/download/v1.6.12-2/sam-1.6.12-2.tar.bz2",
+					"archiveFileName": "sam-1.6.12-2.tar.bz2",
+					"checksum": "SHA-256:C0507972A8591C5DD8B43B5B8003C2B3C5622CA5B558344CA361FB651B9DBC30",
+					"size": "16165317",
+					"boards": [
+						{
+							"name": "Arduino Due"
+						}
+					],
+					"toolsDependencies": [
+						{
+							"packager": "arduino",
+							"name": "arm-none-eabi-gcc",
+							"version": "4.8.3-2014q1"
+						},
+						{
+							"packager": "arduino",
+							"name": "bossac",
+							"version": "1.6.1-arduino"
+						}
+					]
 				}
 			],
 			"tools": [
